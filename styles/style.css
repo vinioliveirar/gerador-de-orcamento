@@ -1,0 +1,99 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9fafb;
+}
+::selection {
+  background-color: #455929; /* Verde escuro */
+  color: #ffffff; /* Texto branco para contraste */
+}
+
+::-moz-selection {
+  background-color: #455929;
+  color: #ffffff;
+}
+
+textarea::placeholder {
+  color: #a1a1aa;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #e4e4e7;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #a1a1aa;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.modal-content {
+  animation: fadeInScale 0.3s ease-out forwards;
+}
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.product-image-preview {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #d4d4d8;
+}
+.input-group-label {
+  min-width: 120px;
+}
+.bg-mami-verde-principal {
+  background-color: #455929;
+}
+.text-mami-verde-principal {
+  color: #455929;
+}
+.border-mami-verde-principal {
+  border-color: #455929;
+}
+.hover\:bg-mami-verde-principal-darker:hover {
+  background-color: #293d09;
+}
+.bg-mami-terracota {
+  background-color: #c44238;
+}
+.text-mami-terracota {
+  color: #c44238;
+}
+.hover\:bg-mami-terracota-darker:hover {
+  background-color: #a33025;
+}
+.bg-mami-mostarda {
+  background-color: #dea043;
+}
+.text-mami-mostarda {
+  color: #dea043;
+}
+.hover\:bg-mami-mostarda-darker:hover {
+  background-color: #b88430;
+}
+.text-mami-cinza-escuro {
+  color: #312e32;
+}
+.bg-mami-amarelo {
+  background-color: #e8c449;
+}
