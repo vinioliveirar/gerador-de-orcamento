@@ -410,7 +410,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (btnGerarPDF) {
-    btnGerarPDF.addEventListener("click", async () => {
+    btnGerarPDF.addEventListener("click", () => {
       if (orcamentoItens.length === 0) {
         showAlert("Adicione pelo menos um item ao orçamento.");
         return;
@@ -427,9 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const margin = 14;
       let startY = 15;
 
-      // --- Lógica de geração do PDF com as melhorias de layout ---
-
-      // 1. Cabeçalho Timbrado
+      // --- INÍCIO: CABEÇALHO EM FORMATO DE CARD ---
       const empresaInfo = {
         nome: "Mami Artesanato",
         cnpj: "XX.XXX.XXX/0001-XX",
@@ -438,39 +436,44 @@ document.addEventListener("DOMContentLoaded", () => {
         email: "contato@mamiartesanato.com.br",
       };
 
+      const headerHeight = 35;
+
+      // Desenha o retângulo de fundo para o cabeçalho, respeitando as margens
+      doc.setFillColor("#e8c449"); // Verde Mami Principal
+      doc.roundedRect(margin, startY, pageWidth - margin * 2, headerHeight, 3, 3, "F"); // 'F' para preencher
+
+      // Adicionar Logo à Esquerda, dentro do card
       if (logoEmpresaBase64) {
         try {
           const imgProps = doc.getImageProperties(logoEmpresaBase64);
           const logoWidth = 35;
           const logoHeight = (imgProps.height * logoWidth) / imgProps.width;
-          // Logo agora está à esquerda
-          doc.addImage(logoEmpresaBase64, imgProps.fileType, margin, startY, logoWidth, logoHeight);
+          const logoY = startY + (headerHeight - logoHeight) / 2;
+          doc.addImage(logoEmpresaBase64, imgProps.fileType, margin + 5, logoY, logoWidth, logoHeight);
         } catch (e) {
           console.error("Erro ao adicionar logo (Base64) ao PDF:", e);
         }
       }
 
-      const infoX = pageWidth - margin;
+      // Adicionar Informações da Empresa à Direita, dentro do card
+      const infoX = pageWidth - margin - 5;
+      const infoY = startY + 7; // Posição Y com padding
       doc.setFontSize(8);
-      doc.setTextColor("#312E32"); // Cinza Escuro
+      doc.setTextColor("#FFFFFF"); // Texto Branco
       doc.setFont(undefined, "bold");
-      doc.text(empresaInfo.nome, infoX, startY, { align: "right" });
+      doc.text(empresaInfo.nome, infoX, infoY, { align: "right" });
       doc.setFont(undefined, "normal");
-      doc.text(empresaInfo.endereco, infoX, startY + 4, { align: "right" });
-      doc.text(`CNPJ: ${empresaInfo.cnpj}`, infoX, startY + 8, { align: "right" });
-      doc.text(`Tel: ${empresaInfo.telefone}`, infoX, startY + 12, { align: "right" });
-      doc.text(`Email: ${empresaInfo.email}`, infoX, startY + 16, { align: "right" });
+      doc.text(empresaInfo.endereco, infoX, infoY + 4, { align: "right" });
+      doc.text(`CNPJ: ${empresaInfo.cnpj}`, infoX, infoY + 8, { align: "right" });
+      doc.text(`Tel: ${empresaInfo.telefone}`, infoX, infoY + 12, { align: "right" });
+      doc.text(`Email: ${empresaInfo.email}`, infoX, infoY + 16, { align: "right" });
 
-      startY += 25;
-      doc.setDrawColor("#DEA043"); // Mostarda
-      doc.setLineWidth(0.5);
-      doc.line(margin, startY, pageWidth - margin, startY);
-      startY += 10;
+      startY += headerHeight + 10;
 
-      // 2. Título do Orçamento
+      // Título do Orçamento
       doc.setFontSize(14);
       doc.setFont(undefined, "bold");
-      doc.setTextColor("#455929"); // Verde Principal
+      doc.setTextColor("#455929");
       doc.text("ORÇAMENTO", margin, startY);
 
       const numOrc = orcamentoNumeroInput ? orcamentoNumeroInput.value.trim() : "";
@@ -482,7 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       startY += 8;
 
-      // 3. Caixa de Destaque para Dados do Cliente
+      // CAIXA DE DADOS DO CLIENTE (SÓ COM BORDA)
       const clienteStartY = startY;
       let clienteBlockHeight = 5;
       const clienteFields = [
@@ -500,14 +503,13 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       clienteBlockHeight += contentHeight;
 
-      doc.setFillColor("#455929", 0.05); // Verde Mami com 5% de opacidade
-      doc.setDrawColor("#455929", 0.2);
+      doc.setDrawColor("#455929", 0.3);
       doc.setLineWidth(0.2);
-      doc.roundedRect(margin, startY, pageWidth - margin * 2, clienteBlockHeight, 3, 3, "FD");
+      doc.roundedRect(margin, startY, pageWidth - margin * 2, clienteBlockHeight, 3, 3, "D");
       startY += 5;
 
       doc.setFontSize(9);
-      doc.setTextColor("#f2f2f2"); // Mantido escuro para legibilidade
+      doc.setTextColor("#312E32");
       clienteFields.forEach((field) => {
         if (field.value) {
           doc.setFont(undefined, "bold");
@@ -520,7 +522,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       startY = clienteStartY + clienteBlockHeight + 10;
 
-      // 4. Tabela de Itens com Estilo de Coluna
       const tableColumn = ["Img", "Nome", "Desc.", "Qtd", "V.Unit.", "Med.", "Subtotal"];
       const tableRows = [];
       orcamentoItens.forEach((item) => {
@@ -545,9 +546,7 @@ document.addEventListener("DOMContentLoaded", () => {
         columnStyles: {
           0: { cellWidth: 12, minCellHeight: 12 },
           1: { cellWidth: 33 },
-          2: {
-            /* A largura da descrição agora será calculada automaticamente */
-          }, // << LINHA MODIFICADA
+          2: {},
           3: { cellWidth: 10, halign: "center" },
           4: { cellWidth: 20, halign: "right" },
           5: { cellWidth: 20 },
@@ -567,7 +566,6 @@ document.addEventListener("DOMContentLoaded", () => {
         },
       });
 
-      // 5. Bloco de Totais Alinhado à Esquerda
       let finalY = doc.lastAutoTable.finalY + 10;
       doc.setFontSize(9);
       doc.setTextColor("#312E32");
@@ -598,7 +596,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       doc.setLineWidth(0.1);
-      doc.line(labelX, finalY, labelX + valueXOffset + 25, finalY); // Linha separadora acima do total
+      doc.line(labelX, finalY, labelX + valueXOffset + 30, finalY);
       finalY += 2;
 
       doc.setFontSize(11);
@@ -608,7 +606,6 @@ document.addEventListener("DOMContentLoaded", () => {
       doc.text(`R$ ${totalFinalVal.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`, labelX + valueXOffset, finalY + 3, { align: "left" });
       finalY += 10;
 
-      // 6. Bloco de Pagamento
       doc.setFontSize(9);
       doc.setTextColor("#312E32");
       doc.setFont(undefined, "normal");
@@ -627,7 +624,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // 7. Rodapé Aprimorado
       const pageCount = doc.internal.getNumberOfPages();
       for (let i = 1; i <= pageCount; i++) {
         doc.setPage(i);
@@ -642,7 +638,6 @@ document.addEventListener("DOMContentLoaded", () => {
         doc.text(`Página ${i} de ${pageCount}`, pageWidth - margin, pageHeight - 10, { align: "right" });
       }
 
-      // Salvar PDF e Resetar
       let nomeArquivo = "orcamento.pdf";
       const nomeClienteVal = clienteNomeInput ? clienteNomeInput.value.trim() : "";
       if (nomeClienteVal) {
@@ -650,11 +645,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (nomeClienteSanitizado) nomeArquivo = `${nomeClienteSanitizado}_orcamento.pdf`;
       }
       doc.save(nomeArquivo);
+
       resetarFormularioCompleto();
     });
   }
 
-  // --- Inicialização da Página ---
   function init() {
     carregarLogoEmpresa();
     if (orcamentoNumeroInput) {
