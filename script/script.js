@@ -439,7 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const headerHeight = 35;
 
       // Desenha o retângulo de fundo para o cabeçalho, respeitando as margens
-      doc.setFillColor("#3A506B"); // Verde Mami Principal
+      doc.setFillColor("#A3C8F0"); // Verde Mami Principal
       doc.roundedRect(margin, startY, pageWidth - margin * 2, headerHeight, 3, 3, "F"); // 'F' para preencher
 
       // Adicionar Logo à Esquerda, dentro do card
