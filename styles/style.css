@@ -3,12 +3,12 @@ body {
   background-color: #f9fafb;
 }
 ::selection {
-  background-color: #455929; /* Verde escuro */
+  background-color: #294559; /* Verde escuro */
   color: #ffffff; /* Texto branco para contraste */
 }
 
 ::-moz-selection {
-  background-color: #455929;
+  background-color: #294559;
   color: #ffffff;
 }
 
@@ -62,16 +62,16 @@ input[type="number"] {
   min-width: 120px;
 }
 .bg-mami-verde-principal {
-  background-color: #455929;
+  background-color: #294559;
 }
 .text-mami-verde-principal {
-  color: #455929;
+  color: #294559;
 }
 .border-mami-verde-principal {
-  border-color: #455929;
+  border-color: #294559;
 }
 .hover\:bg-mami-verde-principal-darker:hover {
-  background-color: #293d09;
+  background-color: #3a506b;
 }
 .bg-mami-terracota {
   background-color: #c44238;

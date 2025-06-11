@@ -429,17 +429,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // --- INÍCIO: CABEÇALHO EM FORMATO DE CARD ---
       const empresaInfo = {
-        nome: "Mami Artesanato",
+        nome: "Nome Empresa",
         cnpj: "XX.XXX.XXX/0001-XX",
         endereco: "Rua Exemplo, 123, São Paulo - SP",
         telefone: "(11) 99999-8888",
-        email: "contato@mamiartesanato.com.br",
+        email: "contato@empresa.com.br",
       };
 
       const headerHeight = 35;
 
       // Desenha o retângulo de fundo para o cabeçalho, respeitando as margens
-      doc.setFillColor("#e8c449"); // Verde Mami Principal
+      doc.setFillColor("#3A506B"); // Verde Mami Principal
       doc.roundedRect(margin, startY, pageWidth - margin * 2, headerHeight, 3, 3, "F"); // 'F' para preencher
 
       // Adicionar Logo à Esquerda, dentro do card
@@ -473,7 +473,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Título do Orçamento
       doc.setFontSize(14);
       doc.setFont(undefined, "bold");
-      doc.setTextColor("#455929");
+      doc.setTextColor("#294559");
       doc.text("ORÇAMENTO", margin, startY);
 
       const numOrc = orcamentoNumeroInput ? orcamentoNumeroInput.value.trim() : "";
@@ -503,7 +503,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       clienteBlockHeight += contentHeight;
 
-      doc.setDrawColor("#455929", 0.3);
+      doc.setDrawColor("#294559", 0.3);
       doc.setLineWidth(0.2);
       doc.roundedRect(margin, startY, pageWidth - margin * 2, clienteBlockHeight, 3, 3, "D");
       startY += 5;
@@ -541,7 +541,7 @@ document.addEventListener("DOMContentLoaded", () => {
         body: tableRows,
         startY: startY,
         theme: "striped",
-        headStyles: { fillColor: "#455929", textColor: "#FFFFFF", fontSize: 8 },
+        headStyles: { fillColor: "#294559", textColor: "#FFFFFF", fontSize: 8 },
         styles: { fontSize: 7, cellPadding: 2, valign: "middle", textColor: "#312E32", overflow: "linebreak" },
         columnStyles: {
           0: { cellWidth: 12, minCellHeight: 12 },
@@ -589,7 +589,7 @@ document.addEventListener("DOMContentLoaded", () => {
         finalY += 5;
       }
       if (acrescimoAbsVal > 0) {
-        doc.setTextColor("#455929");
+        doc.setTextColor("#294559");
         doc.text("Acréscimos:", labelX, finalY, { align: "left" });
         doc.text(`+ R$ ${acrescimoAbsVal.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`, labelX + valueXOffset, finalY, { align: "left" });
         finalY += 5;
@@ -601,7 +601,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       doc.setFontSize(11);
       doc.setFont(undefined, "bold");
-      doc.setTextColor("#455929");
+      doc.setTextColor("#294559");
       doc.text("Total Final:", labelX, finalY + 3, { align: "left" });
       doc.text(`R$ ${totalFinalVal.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`, labelX + valueXOffset, finalY + 3, { align: "left" });
       finalY += 10;
@@ -628,12 +628,12 @@ document.addEventListener("DOMContentLoaded", () => {
       for (let i = 1; i <= pageCount; i++) {
         doc.setPage(i);
         const pageBottomY = pageHeight - 15;
-        doc.setDrawColor("#DEA043");
+        doc.setDrawColor("#3A506B");
         doc.setLineWidth(0.2);
         doc.line(margin, pageBottomY, pageWidth - margin, pageBottomY);
         doc.setFontSize(8);
         doc.setTextColor(150);
-        const footerText = `${empresaInfo.telefone}  |  ${empresaInfo.email}  |  www.mamiartesanato.com.br`;
+        const footerText = `${empresaInfo.telefone}  |  ${empresaInfo.email}  |  www.empresa.com.br`;
         doc.text(footerText, pageWidth / 2, pageBottomY + 5, { align: "center" });
         doc.text(`Página ${i} de ${pageCount}`, pageWidth - margin, pageHeight - 10, { align: "right" });
       }
