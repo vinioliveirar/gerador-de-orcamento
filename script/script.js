@@ -463,8 +463,8 @@ document.addEventListener("DOMContentLoaded", () => {
       doc.setFont(undefined, "bold");
       doc.text(empresaInfo.nome, infoX, infoY, { align: "right" });
       doc.setFont(undefined, "normal");
-      doc.text(empresaInfo.endereco, infoX, infoY + 4, { align: "right" });
-      doc.text(`CNPJ: ${empresaInfo.cnpj}`, infoX, infoY + 8, { align: "right" });
+      //doc.text(empresaInfo.endereco, infoX, infoY + 4, { align: "right" });
+      //doc.text(`CNPJ: ${empresaInfo.cnpj}`, infoX, infoY + 8, { align: "right" });
       doc.text(`Tel: ${empresaInfo.telefone}`, infoX, infoY + 12, { align: "right" });
       doc.text(`Email: ${empresaInfo.email}`, infoX, infoY + 16, { align: "right" });
 
