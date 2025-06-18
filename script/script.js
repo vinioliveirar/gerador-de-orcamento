@@ -430,9 +430,9 @@ document.addEventListener("DOMContentLoaded", () => {
       // --- INÍCIO: CABEÇALHO EM FORMATO DE CARD ---
       const empresaInfo = {
         nome: "Mami Artesanato",
-        cnpj: "XX.XXX.XXX/0001-XX",
-        endereco: "Rua Exemplo, 123, São Paulo - SP",
-        telefone: "(11) 99999-8888",
+        //cnpj: "XX.XXX.XXX/0001-XX",
+        // endereco: "Rua Exemplo, 123, São Paulo - SP",
+        telefone: "(11) 9 4726-6850",
         email: "contato@mamiartesanato.com.br",
       };
 
