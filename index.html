@@ -14,6 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="img/logo.png" />
     <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#455929" />
   </head>
   <body class="bg-[#E8EBE4] text-mami-cinza-escuro min-h-screen flex flex-col items-center p-4 selection:bg-mami-mostarda selection:text-white">
     <div class="container bg-white shadow-xl rounded-lg p-6 md:p-8 w-full max-w-5xl">
@@ -276,5 +278,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 
     <script src="/script/script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .then(() => console.log("Service Worker registrado com sucesso!"))
+          .catch((error) => console.log("Erro ao registrar o Service Worker:", error));
+      }
+    </script>
   </body>
 </html>
