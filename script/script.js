@@ -348,18 +348,18 @@ document.addEventListener("DOMContentLoaded", () => {
         const imagemSrc = item.imagem || "https://placehold.co/40x40/e2e8f0/cbd5e0?text=S/Img";
         tr.innerHTML = `
                     <td class="p-3"><img src="${imagemSrc}" alt="${item.nome}" class="product-image-preview"></td>
-                    <td class="p-3 text-sm text-mami-cinza-escuro">${item.nome}</td>
+                    <td class="p-3 text-sm text-blank-cinza-escuro">${item.nome}</td>
                     <td class="p-3 text-sm text-gray-600 max-w-xs truncate" title="${item.descricao || ""}">${item.descricao || "-"}</td>
-                    <td class="p-3 text-center text-sm text-mami-cinza-escuro">${item.quantidade}</td>
-                    <td class="p-3 text-right text-sm text-mami-cinza-escuro">R$ ${item.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                    <td class="p-3 text-center text-sm text-blank-cinza-escuro">${item.quantidade}</td>
+                    <td class="p-3 text-right text-sm text-blank-cinza-escuro">R$ ${item.valor.toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                     <td class="p-3 text-sm text-gray-600">${item.medidas || "-"}</td>
-                    <td class="p-3 text-right text-sm font-medium text-mami-cinza-escuro">R$ ${item.subtotal.toLocaleString("pt-BR", {
+                    <td class="p-3 text-right text-sm font-medium text-blank-cinza-escuro">R$ ${item.subtotal.toLocaleString("pt-BR", {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
                     })}</td>
                     <td class="p-3 text-center">
-                        <button class="btn-editar text-mami-mostarda hover:text-mami-mostarda-darker mr-2" data-id="${item.id}" title="Editar">✏️</button>
-                        <button class="btn-remover text-mami-terracota hover:text-mami-terracota-darker" data-id="${item.id}" title="Remover">🗑️</button>
+                        <button class="btn-editar text-blank-mostarda hover:text-blank-mostarda-darker mr-2" data-id="${item.id}" title="Editar">✏️</button>
+                        <button class="btn-remover text-blank-terracota hover:text-blank-terracota-darker" data-id="${item.id}" title="Remover">🗑️</button>
                     </td>
                 `;
         tabelaOrcamentoBody.appendChild(tr);
@@ -439,7 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const headerHeight = 35;
 
       // Desenha o retângulo de fundo para o cabeçalho, respeitando as margens
-      doc.setFillColor("#A3C8F0"); // Verde Mami Principal
+      doc.setFillColor("#A3C8F0"); // Verde blank Principal
       doc.roundedRect(margin, startY, pageWidth - margin * 2, headerHeight, 3, 3, "F"); // 'F' para preencher
 
       // Adicionar Logo à Esquerda, dentro do card

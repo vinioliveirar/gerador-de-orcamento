@@ -14,8 +14,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="img/logo.png" />
     <link rel="stylesheet" href="/styles/style.css" />
+
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#294559" />
   </head>
-  <body class="bg-[#F2F2F2] text-mami-cinza-escuro min-h-screen flex flex-col items-center p-4 selection:bg-mami-mostarda selection:text-white">
+  <body class="bg-[#F2F2F2] text-blank-cinza-escuro min-h-screen flex flex-col items-center p-4 selection:bg-blank-mostarda selection:text-white">
     <div class="container bg-white shadow-xl rounded-lg p-6 md:p-8 w-full max-w-5xl">
       <header class="mb-8 pb-6 border-b border-gray-200 flex flex-col sm:flex-row justify-between items-center">
         <div>
@@ -26,135 +29,135 @@
             class="h-22 sm:h-28 mb-4 sm:mb-0"
             onerror="this.alt='Logo não encontrado em img/logo.png'; this.style.display='none'; document.getElementById('logoEmpresaTextoAlternativo').style.display='block';"
           />
-          <p id="logoEmpresaTextoAlternativo" style="display: none" class="text-sm text-mami-terracota">Logo (não encontrado em img/logo.png)</p>
+          <p id="logoEmpresaTextoAlternativo" style="display: none" class="text-sm text-blank-terracota">Logo (não encontrado em img/logo.png)</p>
         </div>
-        <h1 class="text-2xl sm:text-3xl font-bold text-mami-verde-principal text-center sm:text-right">Gerador de Orçamentos</h1>
+        <h1 class="text-2xl sm:text-3xl font-bold text-blank-azul-principal text-center sm:text-right">Gerador de Orçamentos</h1>
       </header>
 
-      <section id="infoOrcamento" class="mb-8 p-6 bg-mami-verde-principal/[.07] rounded-lg border border-mami-verde-principal/[.2]">
-        <h2 class="text-xl font-semibold mb-4 text-mami-verde-principal">Detalhes do Orçamento</h2>
+      <section id="infoOrcamento" class="mb-8 p-6 bg-blank-azul-principal/[.07] rounded-lg border border-blank-azul-principal/[.2]">
+        <h2 class="text-xl font-semibold mb-4 text-blank-azul-principal">Detalhes do Orçamento</h2>
         <div>
-          <label for="orcamentoNumero" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Número do Orçamento:</label>
+          <label for="orcamentoNumero" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Número do Orçamento:</label>
           <input
             type="text"
             id="orcamentoNumero"
             placeholder="Ex: ORC-2024-001"
-            class="w-full md:w-1/2 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-mami-mostarda focus:border-mami-mostarda"
+            class="w-full md:w-1/2 p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blank-mostarda focus:border-blank-mostarda"
           />
         </div>
       </section>
 
       <section id="infoCliente" class="mb-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
-        <h2 class="text-xl font-semibold mb-4 text-mami-cinza-escuro">Informações do Cliente</h2>
+        <h2 class="text-xl font-semibold mb-4 text-blank-cinza-escuro">Informações do Cliente</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
           <div>
-            <label for="clienteNome" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Nome Completo:</label>
+            <label for="clienteNome" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Nome Completo:</label>
             <input
               type="text"
               id="clienteNome"
               placeholder="Nome completo do cliente"
-              class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-mami-mostarda focus:border-mami-mostarda"
+              class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blank-mostarda focus:border-blank-mostarda"
             />
           </div>
           <div>
-            <label for="clienteTelefone" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Telefone:</label>
+            <label for="clienteTelefone" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Telefone:</label>
             <input
               type="tel"
               id="clienteTelefone"
               placeholder="(XX) XXXXX-XXXX"
               maxlength="15"
-              class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-mami-mostarda focus:border-mami-mostarda"
+              class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blank-mostarda focus:border-blank-mostarda"
             />
           </div>
           <div class="md:col-span-2">
-            <label for="clienteEmail" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Email:</label>
+            <label for="clienteEmail" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Email:</label>
             <input
               type="email"
               id="clienteEmail"
               placeholder="Ex: email@exemplo.com"
-              class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-mami-mostarda focus:border-mami-mostarda"
+              class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blank-mostarda focus:border-blank-mostarda"
             />
           </div>
           <div class="md:col-span-2">
-            <label for="clienteEndereco" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Endereço Completo:</label>
+            <label for="clienteEndereco" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Endereço Completo:</label>
             <input
               type="text"
               id="clienteEndereco"
               placeholder="Ex: Rua das Flores, 123, Centro, Cidade - UF, CEP 12345-678"
-              class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-mami-mostarda focus:border-mami-mostarda"
+              class="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:ring-blank-mostarda focus:border-blank-mostarda"
             />
           </div>
           <div class="md:col-span-2">
-            <label for="clienteObservacao" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Observações Adicionais:</label>
+            <label for="clienteObservacao" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Observações Adicionais:</label>
             <textarea
               id="clienteObservacao"
               rows="2"
               placeholder="Alguma observação sobre o cliente ou o pedido"
-              class="w-full p-3 border border-gray-300 rounded-md shadow-sm resize-y focus:ring-mami-mostarda focus:border-mami-mostarda"
+              class="w-full p-3 border border-gray-300 rounded-md shadow-sm resize-y focus:ring-blank-mostarda focus:border-blank-mostarda"
             ></textarea>
           </div>
         </div>
       </section>
 
       <main>
-        <section id="formProdutoContainer" class="mb-8 p-6 bg-mami-mostarda/[.07] rounded-lg border border-mami-mostarda/[.2]">
-          <h2 id="formProdutoTitle" class="text-xl font-semibold mb-4 text-mami-mostarda">Adicionar Produto</h2>
+        <section id="formProdutoContainer" class="mb-8 p-6 bg-blank-mostarda/[.07] rounded-lg border border-blank-mostarda/[.2]">
+          <h2 id="formProdutoTitle" class="text-xl font-semibold mb-4 text-blank-mostarda">Adicionar Produto</h2>
           <input type="hidden" id="editItemId" />
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
             <div>
-              <label for="produtoNome" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Nome do Produto:</label>
+              <label for="produtoNome" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Nome do Produto:</label>
               <input
                 type="text"
                 id="produtoNome"
                 placeholder="Nome do produto"
-                class="w-full p-3 border border-gray-300 rounded-md focus:ring-mami-mostarda focus:border-mami-mostarda"
+                class="w-full p-3 border border-gray-300 rounded-md focus:ring-blank-mostarda focus:border-blank-mostarda"
               />
             </div>
             <div>
-              <label for="produtoQuantidade" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Quantidade:</label>
+              <label for="produtoQuantidade" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Quantidade:</label>
               <input
                 type="number"
                 id="produtoQuantidade"
                 value="1"
                 min="1"
                 placeholder="1"
-                class="w-full p-3 border border-gray-300 rounded-md focus:ring-mami-mostarda focus:border-mami-mostarda"
+                class="w-full p-3 border border-gray-300 rounded-md focus:ring-blank-mostarda focus:border-blank-mostarda"
               />
             </div>
             <div class="md:col-span-2">
-              <label for="produtoDescricao" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Descrição:</label>
+              <label for="produtoDescricao" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Descrição:</label>
               <textarea
                 id="produtoDescricao"
                 rows="3"
                 placeholder="Detalhes do produto (material, cor, tamanho, etc.)"
-                class="w-full p-3 border border-gray-300 rounded-md resize-y focus:ring-mami-mostarda focus:border-mami-mostarda"
+                class="w-full p-3 border border-gray-300 rounded-md resize-y focus:ring-blank-mostarda focus:border-blank-mostarda"
               ></textarea>
             </div>
             <div>
-              <label for="produtoValor" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Valor Unitário (R$):</label>
+              <label for="produtoValor" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Valor Unitário (R$):</label>
               <input
                 type="text"
                 id="produtoValor"
                 placeholder="0,00"
-                class="w-full p-3 border border-gray-300 rounded-md focus:ring-mami-mostarda focus:border-mami-mostarda text-right"
+                class="w-full p-3 border border-gray-300 rounded-md focus:ring-blank-mostarda focus:border-blank-mostarda text-right"
               />
             </div>
             <div>
-              <label for="produtoMedidas" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Medidas:</label>
+              <label for="produtoMedidas" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Medidas:</label>
               <input
                 type="text"
                 id="produtoMedidas"
                 placeholder="Ex: P, M, G, 10x20cm, etc."
-                class="w-full p-3 border border-gray-300 rounded-md focus:ring-mami-mostarda focus:border-mami-mostarda"
+                class="w-full p-3 border border-gray-300 rounded-md focus:ring-blank-mostarda focus:border-blank-mostarda"
               />
             </div>
             <div class="md:col-span-2">
-              <label for="produtoImagem" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Imagem (opcional):</label>
+              <label for="produtoImagem" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Imagem (opcional):</label>
               <input
                 type="file"
                 id="produtoImagem"
                 accept="image/*"
-                class="w-full text-sm text-mami-cinza-escuro file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-mami-amarelo/[.2] file:text-mami-mostarda hover:file:bg-mami-amarelo/[.4]"
+                class="w-full text-sm text-blank-cinza-escuro file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blank-amarelo/[.2] file:text-blank-mostarda hover:file:bg-blank-amarelo/[.4]"
               />
               <img id="imagemPreview" src="#" alt="Preview da Imagem do Produto" class="mt-2 h-20 w-20 object-cover rounded-md border hidden" />
             </div>
@@ -162,7 +165,7 @@
           <div class="mt-6 flex flex-col sm:flex-row gap-3">
             <button
               id="btnSalvarProduto"
-              class="w-full sm:w-auto bg-mami-verde-principal hover:bg-mami-verde-principal-darker text-white font-semibold py-3 px-4 rounded-md shadow-md"
+              class="w-full sm:w-auto bg-blank-azul-principal hover:bg-blank-azul-principal-darker text-white font-semibold py-3 px-4 rounded-md shadow-md"
             >
               Adicionar Produto
             </button>
@@ -173,19 +176,19 @@
         </section>
 
         <section id="listaOrcamento" class="mb-8">
-          <h2 class="text-2xl font-semibold mb-6 text-mami-cinza-escuro">Itens do Orçamento</h2>
+          <h2 class="text-2xl font-semibold mb-6 text-blank-cinza-escuro">Itens do Orçamento</h2>
           <div class="overflow-x-auto bg-white rounded-lg shadow">
             <table id="tabelaOrcamento" class="w-full min-w-max">
               <thead class="bg-gray-200">
                 <tr>
-                  <th class="p-3 text-left text-sm font-semibold text-mami-cinza-escuro">Imagem</th>
-                  <th class="p-3 text-left text-sm font-semibold text-mami-cinza-escuro">Nome</th>
-                  <th class="p-3 text-left text-sm font-semibold text-mami-cinza-escuro">Descrição</th>
-                  <th class="p-3 text-center text-sm font-semibold text-mami-cinza-escuro">Qtd.</th>
-                  <th class="p-3 text-right text-sm font-semibold text-mami-cinza-escuro">V.Unit.</th>
-                  <th class="p-3 text-left text-sm font-semibold text-mami-cinza-escuro">Med.</th>
-                  <th class="p-3 text-right text-sm font-semibold text-mami-cinza-escuro">Subtotal</th>
-                  <th class="p-3 text-center text-sm font-semibold text-mami-cinza-escuro">Ações</th>
+                  <th class="p-3 text-left text-sm font-semibold text-blank-cinza-escuro">Imagem</th>
+                  <th class="p-3 text-left text-sm font-semibold text-blank-cinza-escuro">Nome</th>
+                  <th class="p-3 text-left text-sm font-semibold text-blank-cinza-escuro">Descrição</th>
+                  <th class="p-3 text-center text-sm font-semibold text-blank-cinza-escuro">Qtd.</th>
+                  <th class="p-3 text-right text-sm font-semibold text-blank-cinza-escuro">V.Unit.</th>
+                  <th class="p-3 text-left text-sm font-semibold text-blank-cinza-escuro">Med.</th>
+                  <th class="p-3 text-right text-sm font-semibold text-blank-cinza-escuro">Subtotal</th>
+                  <th class="p-3 text-center text-sm font-semibold text-blank-cinza-escuro">Ações</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200">
@@ -198,10 +201,10 @@
         </section>
 
         <section class="mb-8 p-6 bg-gray-50 rounded-lg border border-gray-200">
-          <h2 class="text-xl font-semibold mb-4 text-mami-cinza-escuro">Totais e Pagamento</h2>
+          <h2 class="text-xl font-semibold mb-4 text-blank-cinza-escuro">Totais e Pagamento</h2>
           <div class="space-y-3 mb-6">
             <div class="flex items-center justify-end">
-              <label for="descontoPercentual" class="text-sm font-medium text-mami-cinza-escuro mr-2 input-group-label text-right">Desconto (%):</label>
+              <label for="descontoPercentual" class="text-sm font-medium text-blank-cinza-escuro mr-2 input-group-label text-right">Desconto (%):</label>
               <input
                 type="number"
                 id="descontoPercentual"
@@ -209,65 +212,65 @@
                 max="100"
                 step="0.01"
                 placeholder="0"
-                class="w-24 p-2 border border-gray-300 rounded-md shadow-sm text-right focus:ring-mami-mostarda focus:border-mami-mostarda"
+                class="w-24 p-2 border border-gray-300 rounded-md shadow-sm text-right focus:ring-blank-mostarda focus:border-blank-mostarda"
               />
             </div>
             <div class="flex items-center justify-end">
-              <label for="valorAcrescimo" class="text-sm font-medium text-mami-cinza-escuro mr-2 input-group-label text-right">Acréscimos (R$):</label>
+              <label for="valorAcrescimo" class="text-sm font-medium text-blank-cinza-escuro mr-2 input-group-label text-right">Acréscimos (R$):</label>
               <input
                 type="text"
                 id="valorAcrescimo"
                 placeholder="0,00"
-                class="w-24 p-2 border border-gray-300 rounded-md shadow-sm text-right focus:ring-mami-mostarda focus:border-mami-mostarda"
+                class="w-24 p-2 border border-gray-300 rounded-md shadow-sm text-right focus:ring-blank-mostarda focus:border-blank-mostarda"
               />
             </div>
           </div>
 
           <div class="text-right mb-6 space-y-1">
-            <p class="text-sm text-mami-cinza-escuro">Subtotal dos Itens: R$ <span id="subtotalItensValor" class="font-medium">0.00</span></p>
-            <p class="text-sm text-mami-terracota">Valor do Desconto: R$ <span id="descontoValorAbsoluto" class="font-medium">0.00</span></p>
-            <p class="text-sm text-mami-verde-principal">Valor dos Acréscimos: R$ <span id="acrescimoValorAbsoluto" class="font-medium">0.00</span></p>
+            <p class="text-sm text-blank-cinza-escuro">Subtotal dos Itens: R$ <span id="subtotalItensValor" class="font-medium">0.00</span></p>
+            <p class="text-sm text-blank-terracota">Valor do Desconto: R$ <span id="descontoValorAbsoluto" class="font-medium">0.00</span></p>
+            <p class="text-sm text-blank-azul-principal">Valor dos Acréscimos: R$ <span id="acrescimoValorAbsoluto" class="font-medium">0.00</span></p>
           </div>
 
-          <div class="mt-4 p-4 bg-mami-verde-principal/[.1] rounded-lg flex justify-end items-center">
-            <p class="text-xl font-bold text-mami-verde-principal">Total Final do Orçamento: R$ <span id="valorTotalOrcamento" class="text-mami-verde-principal">0.00</span></p>
+          <div class="mt-4 p-4 bg-blank-azul-principal/[.1] rounded-lg flex justify-end items-center">
+            <p class="text-xl font-bold text-blank-azul-principal">Total Final do Orçamento: R$ <span id="valorTotalOrcamento" class="text-blank-azul-principal">0.00</span></p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 mt-6">
             <div>
-              <label for="formasPagamento" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Formas de Pagamento:</label>
+              <label for="formasPagamento" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Formas de Pagamento:</label>
               <textarea
                 id="formasPagamento"
                 rows="3"
                 placeholder="Ex: PIX, Cartão de Crédito (até 3x s/ juros), Boleto Bancário"
-                class="w-full p-3 border border-gray-300 rounded-md focus:ring-mami-mostarda focus:border-mami-mostarda"
+                class="w-full p-3 border border-gray-300 rounded-md focus:ring-blank-mostarda focus:border-blank-mostarda"
               ></textarea>
             </div>
             <div>
-              <label for="condicoesPagamento" class="block text-sm font-medium text-mami-cinza-escuro mb-1">Condições/Validade:</label>
+              <label for="condicoesPagamento" class="block text-sm font-medium text-blank-cinza-escuro mb-1">Condições/Validade:</label>
               <textarea
                 id="condicoesPagamento"
                 rows="3"
                 placeholder="Ex: 50% de entrada, restante na entrega. Orçamento válido por 15 dias."
-                class="w-full p-3 border border-gray-300 rounded-md focus:ring-mami-mostarda focus:border-mami-mostarda"
+                class="w-full p-3 border border-gray-300 rounded-md focus:ring-blank-mostarda focus:border-blank-mostarda"
               ></textarea>
             </div>
           </div>
         </section>
 
         <section class="text-center">
-          <button id="btnGerarPDF" class="w-full md:w-auto bg-mami-mostarda hover:bg-mami-mostarda-darker text-white font-bold py-3 px-8 rounded-md shadow-md">Gerar PDF</button>
+          <button id="btnGerarPDF" class="w-full md:w-auto bg-blank-mostarda hover:bg-blank-mostarda-darker text-white font-bold py-3 px-8 rounded-md shadow-md">Gerar PDF</button>
         </section>
       </main>
 
       <div id="customAlertModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 hidden z-50">
         <div class="modal-content bg-white rounded-lg shadow-xl p-6 w-full max-w-md">
           <div class="flex justify-between items-center mb-4">
-            <h3 id="customAlertTitle" class="text-lg font-semibold text-mami-cinza-escuro">Atenção</h3>
-            <button id="customAlertCloseButton" class="text-gray-400 hover:text-mami-terracota text-2xl leading-none">&times;</button>
+            <h3 id="customAlertTitle" class="text-lg font-semibold text-blank-cinza-escuro">Atenção</h3>
+            <button id="customAlertCloseButton" class="text-gray-400 hover:text-blank-terracota text-2xl leading-none">&times;</button>
           </div>
-          <p id="customAlertMessage" class="text-mami-cinza-escuro mb-6">Mensagem.</p>
-          <button id="customAlertOkButton" class="w-full bg-mami-verde-principal hover:bg-mami-verde-principal-darker text-white font-semibold py-2 px-4 rounded-md">OK</button>
+          <p id="customAlertMessage" class="text-blank-cinza-escuro mb-6">Mensagem.</p>
+          <button id="customAlertOkButton" class="w-full bg-blank-azul-principal hover:bg-blank-azul-principal-darker text-white font-semibold py-2 px-4 rounded-md">OK</button>
         </div>
       </div>
     </div>
@@ -276,5 +279,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
 
     <script src="/script/script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(() => console.log("Service Worker registrado com sucesso"))
+          .catch((err) => console.error("Erro ao registrar o Service Worker", err));
+      }
+    </script>
   </body>
 </html>

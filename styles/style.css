@@ -3,7 +3,7 @@ body {
   background-color: #f9fafb;
 }
 ::selection {
-  background-color: #294559; /* Verde escuro */
+  background-color: #294559; /* azul escuro */
   color: #ffffff; /* Texto branco para contraste */
 }
 
@@ -61,39 +61,39 @@ input[type="number"] {
 .input-group-label {
   min-width: 120px;
 }
-.bg-mami-verde-principal {
+.bg-blank-azul-principal {
   background-color: #294559;
 }
-.text-mami-verde-principal {
+.text-blank-azul-principal {
   color: #294559;
 }
-.border-mami-verde-principal {
+.border-blank-azul-principal {
   border-color: #294559;
 }
-.hover\:bg-mami-verde-principal-darker:hover {
+.hover\:bg-blank-azul-principal-darker:hover {
   background-color: #3a506b;
 }
-.bg-mami-terracota {
+.bg-blank-terracota {
   background-color: #c44238;
 }
-.text-mami-terracota {
+.text-blank-terracota {
   color: #c44238;
 }
-.hover\:bg-mami-terracota-darker:hover {
+.hover\:bg-blank-terracota-darker:hover {
   background-color: #a33025;
 }
-.bg-mami-mostarda {
+.bg-blank-mostarda {
   background-color: #dea043;
 }
-.text-mami-mostarda {
+.text-blank-mostarda {
   color: #dea043;
 }
-.hover\:bg-mami-mostarda-darker:hover {
+.hover\:bg-blank-mostarda-darker:hover {
   background-color: #b88430;
 }
-.text-mami-cinza-escuro {
+.text-blank-cinza-escuro {
   color: #312e32;
 }
-.bg-mami-amarelo {
+.bg-blank-amarelo {
   background-color: #e8c449;
 }
